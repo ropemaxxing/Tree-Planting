@@ -27,6 +27,7 @@ int main(int argc, char *argv[])
             end();
             break;
         }
+        else cout << "Invalid input. Please try again." << endl;
     }
 
 }

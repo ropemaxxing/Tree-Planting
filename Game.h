@@ -1,14 +1,15 @@
 #include <iostream>
 #include <iomanip>
+#include <limits>
 #include "Combat.h"
 #include "TreeStat.h"
 #include "LL.h"
 using namespace std;
 
-void watering();
 void start();
-void Rule();
+void watering();
 void cutting();
+void Rule();
 void planting();
 void end();
 int choose();
@@ -24,6 +25,7 @@ void start()
         else if(i==2) watering();
         else if(i==3) cutting();
         else if(i==4) break;
+        else cout << "Invalid input. Please try again." << endl;
     }
 }
 
@@ -39,6 +41,7 @@ void start()
 
 void Rule()
 {
+    system("CLS");
     cout<<"All you have to do is plant a TREE then CUT IT!!."<<endl;
     cout<<"Planting: Choose number of tree you want to plant and take care them."<<endl;
     cout<<"Tree number data :"<<endl;
@@ -72,6 +75,7 @@ void Rule()
 
 void cutting()
 {
+    system("CLS");
     int A,B,treelife = 100;
     while(treelife>0||A==2)
     {
@@ -89,25 +93,35 @@ void cutting()
 
 void planting()
 {
+    system("CLS");
     LL A;
     int data,i;
     NODE *t;
 
-    while((i=choose())!=0)
+    do
     {
-        cout<<"Input Tree No. : ";
-        cin>>data;
-        t = new tree(i,data);
-        A.add_node(t);
-    }
+        i = choose();
+        if(i>6 || i<0){
+            cout << "Invalid input. Please try again." << endl;
+            continue;
+        }
+        else if(i!=0){
+            cout<<"Input Tree No. : ";
+            cin>>data;
+            t = new tree(i,data);
+            A.add_node(t);
+        }
+        
+    }while(i!=0);
     A.show_all();
+    start();
 }
 
 
 
 void watering()
 {
-    
+    system("CLS");
 }
 
 void end()
@@ -117,11 +131,13 @@ void end()
 
 int choose()
 {
+    system("CLS");
     int i;
     cout<<"Select Tree Number(1-6)"<<endl;
     cout<<"(1) Oak           (2) Pine          (3) Birch      "<<endl;
     cout<<"(4) Maple         (5) Palm          (6) Olive      "<<endl;
     cout<<"(0) Done"<<endl;
     cin>>i;
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
     return i;
 }

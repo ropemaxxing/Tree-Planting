@@ -7,42 +7,34 @@
 using namespace std;
 
 
-/*class Oak:public tree{
-private: long id;
-	string name;
-protected:
+class Oak:public tree{
 
-public:
-	MU_person(long=99999 ,string ="Name doesn't exist",unsigned long i=1929900);
-  void display();
-  ~MU_person();
-};*/
+  public:
+};
 
-#endif
+class Pine:public tree{
 
+  public:
+};
 
+class Birch:public tree{
 
+  public:
+};
 
+class Maple:public tree{
 
+  public:
+};
 
+class Palm:public tree{
 
+  public:
+};
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+class Olive:public tree{
+  
+  public:
+};
 
 #endif

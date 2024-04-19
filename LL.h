@@ -9,10 +9,8 @@ class LL{
 public:
       void add_node(NODE*&);
       virtual void show_all();
-    
-      virtual ~LL();
       LL();
-      
+      virtual ~LL();
 };
 
 LL::LL(){
@@ -35,17 +33,14 @@ LL::~LL(){
 void LL::show_all(){
      NODE* t=hol;
      int i;
-     for(i=0;i<size;i++)
-     {
-     t->show_node();
-     t=t->move_next();
+     for(i=0;i<size;i++){
+      t->show_node();
+      t=t->move_next();
      }
 }
 void LL::add_node(NODE *&A){
-
-          hol->insert(A);
-          hol=A;
-
-       size++;
+      hol->insert(A);
+      hol=A;
+      size++;
 
  }

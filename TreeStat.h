@@ -7,6 +7,8 @@
 
 using namespace std;
 
+void show_stat();
+
 class tree:public NODE{
     int ty,minh,maxh,minl,maxl,size;
     string sname,le,wo,wl,sp,wa;
@@ -15,7 +17,7 @@ public:
     ~tree();
     void display();
     void show_node(){
-        cout<<"You have plant "<<ty<<" and now it's "<<size<<"Meter(s)";
+        cout<<"You have plant "<<sp<<" and now it's "<<size<<" Meter(s)"<<endl;
         NODE::show_node();
     }
 
@@ -112,7 +114,7 @@ tree::tree(int x,int y):NODE(y)
 
 tree::~tree()
 {
-    cout<<"How can you be this bad."<<endl<<"You just cut number "<<sp<<" without hesitation"<<endl;
+    cout<<"How can you be this bad."<<endl<<"You just cut number "<<ty<<" without hesitation"<<endl;
 }
 
 void tree::display()
@@ -128,4 +130,5 @@ void tree::display()
     cout<<" Water Level Required : "<<wa<<endl;
     cout<<" Wildlife             : "<<wl<<endl;
 }
+
 #endif

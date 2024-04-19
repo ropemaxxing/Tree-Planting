@@ -8,7 +8,7 @@ using namespace std;
 class weed{
 private:
     string name;
-    int hp=10,number;
+    int hp = 10,number;
 public:
     weed(string = "Weed", int = 10);
 
