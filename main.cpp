@@ -14,9 +14,10 @@ int main(int argc, char *argv[])
     int i;
     while (i = menu())
     {
+        system("CLS");
         if (i == 1)
         {
-            start();
+            planting();
         }
         else if (i == 2)
         {
@@ -36,10 +37,9 @@ int menu()
     cout << endl;
     cout << "Hello and Welcome to TREE SIMULATOR" << endl;
     cout << "Enter" << endl
-         << "(1) Start         (2) Rule" << endl;
+         << "(1) Planting         (2) Rule" << endl;
     cout << "(3) End" << endl;
     cin >> i;
-    cout << endl
-         << "----------------------------------" << endl;
+
     return i;
 }

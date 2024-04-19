@@ -5,10 +5,12 @@
 
 using namespace std;
 
-class weed{
+class weed
+{
 private:
     string name;
     int number;
+
 public:
     weed(string = "Weed", int = 10);
     ~weed();
@@ -17,14 +19,14 @@ public:
 
 weed::weed(string a, int b)
 {
-    name    =   a;
-    hp      =   b;
-    cout<<name<<" has spawned"<<endl;
+    name = a;
+    hp = b;
+    cout << name << " has spawned" << endl;
 }
 
 weed::~weed()
 {
-    cout<<"You've killed "<<name<<" and got (an) item(s)."<<endl;
+    cout << "You've killed " << name << " and got (an) item(s)." << endl;
 }
 
 #endif
