@@ -19,12 +19,12 @@ weed::weed(string a, int b)
 {
     name    =   a;
     hp      =   b;
-    cout<<name<<"has spawned"<<endl;
+    cout<<name<<" has spawned"<<endl;
 }
 
 weed::~weed()
 {
-    cout<<"You've killed "<<name<<"and got an item."<<endl;
+    cout<<"You've killed "<<name<<" and got (an) item(s)."<<endl;
 }
 
 #endif

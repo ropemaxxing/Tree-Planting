@@ -41,7 +41,7 @@ tree::tree(int x,int y):NODE(y)
     if(x==2)
     {
         sp = "Pine";
-        sname = "";
+        sname = "Pinus spp.";
         minh = 20;
         maxh = 50;
         minl = 100;
@@ -119,9 +119,9 @@ void tree::display()
     cout<<" Science Name         : "<<sname<<endl;
     cout<<" Average Height       : "<<minh<<" - "<<maxh<<" metres"<<endl;
     cout<<" Avereage Lifespan    : "<<minl<<" - "<<maxl<<" years"<<endl;
-    cout<<" Leaves               : "<<le<<endl;
-    cout<<" Wood                 : "<<wo<<endl;
-    cout<<" Water Level Required : "<<wa<<endl;
+    cout<<" Leaf Type            : "<<le<<endl;
+    cout<<" Wood Hardness        : "<<wo<<endl;
+    cout<<" Water Requirement    : "<<wa<<endl;
     cout<<" Wildlife             : "<<wl<<endl;
 }
 #endif

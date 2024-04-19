@@ -1,9 +1,9 @@
 compile: main.cpp 
-	 g++  NODE.cpp LL.cpp main.cpp -o LL
+	 g++ main.cpp -o a.exe
 
 run: LL
-	 ./LL
+	 a.exe
 
 
 clean: LL
-	 rm LL
+	 a.exe

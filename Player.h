@@ -15,6 +15,7 @@ public:
     void getfert(int);
     void usewater(int);
     void usefert(int);
+    void show();
 };
 
 player::player(int w, int f)
@@ -41,6 +42,14 @@ void player::usefert(int f)
 void player::getfert(int f)
 {
     this->fert +=f;
+}
+
+void player::show()
+{
+    cout << endl
+         << "----------------------------------" << endl<<endl;
+    cout<<"You have "<<this->water<<" water and "<<this->fert<<" fertilizer(s)"<<endl;
+
 }
 
 
