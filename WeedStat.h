@@ -8,10 +8,11 @@ using namespace std;
 class weed{
 private:
     string name;
-    int hp=10,number;
+    int number;
 public:
     weed(string = "Weed", int = 10);
-
+    ~weed();
+    int hp = 10;
 };
 
 weed::weed(string a, int b)
@@ -19,6 +20,11 @@ weed::weed(string a, int b)
     name    =   a;
     hp      =   b;
     cout<<name<<"has spawned"<<endl;
+}
+
+weed::~weed()
+{
+    cout<<"You've killed "<<name<<"and got an item."<<endl;
 }
 
 #endif

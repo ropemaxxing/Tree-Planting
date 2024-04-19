@@ -63,7 +63,6 @@ tree::tree(int x,int y):NODE(y)
         wo = "Medium";
         wa = "High";
         wl = "Bird Squiral Rodent";
-
     } else
     if(x==4)
     {
@@ -77,7 +76,6 @@ tree::tree(int x,int y):NODE(y)
         wo = "Hard";
         wa = "Medium to Hard";
         wl = "Bird Squiral Rodent";
-
     } else
     if(x==5)
     {
@@ -91,7 +89,6 @@ tree::tree(int x,int y):NODE(y)
         wo = "Soft";
         wa = "High";
         wl = "Bird Monkey Reptile";
-
     } else
     if(x==6)
     {
@@ -105,7 +102,6 @@ tree::tree(int x,int y):NODE(y)
         wo = "Medium";
         wa = "Medium";
         wl = "Bird Insect Reptile";
-
     }
 
 }

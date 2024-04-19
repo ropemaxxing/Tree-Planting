@@ -1,8 +1,13 @@
 #include <iostream>
 #include <iomanip>
+#include <time.h>
+#include <stdlib.h>
 #include "Combat.h"
-#include "TreeStat.h"
+#include "TreeSpecies.h"
 #include "LL.h"
+#include "WeedStat.h"
+#include "Player.h"
+
 using namespace std;
 
 void watering();
@@ -15,6 +20,7 @@ int choose();
 
 void start()
 {
+    player *p =new player();
     int i;
     cout<<"Enter"<<endl<<"(1) Planting      (2) Watering"<<endl<<"(3) No Weed        (4) Exit"<<endl;
     cin>>i;
@@ -70,10 +76,13 @@ void Rule()
     
 }
 
-void cutting()
+void cutting(player *p)
 {
+    srand(time(NULL));
+    int r = rand()%3;
+    weed* t = new weed();
     int A,B,treelife = 100;
-    while(treelife>0||A==2)
+    while(t->hp>0)
     {
         cout<<"Tree Life : "<<treelife<<endl;
         cout<<"Enter"<<endl<<"(1) Attack       (2) Spare"<<endl;
@@ -81,8 +90,13 @@ void cutting()
         if(A==1)
         {
             B = rollDice();
-            treelife=treelife-B;
+            t->hp-=B;
         }
+    }
+    if(t->hp<=0)
+    {
+        if(t->hp%2==0) p->getwater(r);
+        else p->getfert(r);
     }
     //if(treelife<=0) ~tree();
 }
@@ -97,7 +111,30 @@ void planting()
     {
         cout<<"Input Tree No. : ";
         cin>>data;
-        t = new tree(i,data);
+        if(i==1)
+        {
+            t = new Oak(i,data);
+        } else
+        if(i==2)
+        { 
+            t = new Pine(i,data);
+        } else
+        if(i==3)
+        {
+            t = new Birch(i,data);
+        } else
+        if(i==4)
+        {
+            t = new Maple(i,data);             
+        } else
+        if(i==5)
+        {
+            t = new Palm(i,data);
+        } else
+        if(i==6)
+        {
+            t = new Olive(i,data);            
+        }
         A.add_node(t);
     }
     A.show_all();
@@ -105,9 +142,10 @@ void planting()
 
 
 
-void watering()
+void watering(player *p)
 {
-    
+    //if(water==0) cout<<"You don't have enough water!"<<endl;
+    //else () //
 }
 
 void end()
