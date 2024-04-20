@@ -12,7 +12,9 @@ private:
 public:
     player(int = 0, int = 0, int = 0, int = 0, int = 40);
     void getwater(int);
+    int wateramount(){return water;}
     void getfert(int);
+    int fertamount(){return fert;}
     void usewater(int);
     void usefert(int);
     void goldchange(int);

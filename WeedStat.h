@@ -2,31 +2,43 @@
 #define weed_h
 #include <iostream>
 #include <iomanip>
+#include "NODE2.h"
+
 
 using namespace std;
 
-class weed
-{
+class weed:public NODE2{
 private:
     string name;
     int number;
-
+    weed* next;
 public:
     weed(string = "Weed", int = 10);
     ~weed();
-    int hp = 10;
+    weed*& move_next();
+    int hp = rand()%10;
+    void set_weed_hp(int x){
+        hp = x;
+    }
 };
 
 weed::weed(string a, int b)
 {
-    name = a;
-    hp = b;
-    cout << name << " has spawned" << endl;
+    name    =   a;
+    hp      =   b;
+    cout<<name<<"has spawned"<<endl;
+}
+
+
+weed*& weed::move_next(){
+    return next;
 }
 
 weed::~weed()
 {
-    cout << "You've killed " << name << " and got (an) item(s)." << endl;
+
 }
+
+
 
 #endif

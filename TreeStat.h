@@ -1,4 +1,3 @@
-
 #ifndef treestat_h
 #define treestat_h
 #include <iostream>
@@ -10,8 +9,9 @@ using namespace std;
 class tree : public NODE
 {
     int size;
+    int treelevel;
     int watermax;
-    int waternow;
+    int waternow=0;
     int fertmax;
     int fertnow;
 
@@ -25,6 +25,33 @@ public:
         // cout << "You have plant " << ty << " and now it's " << size << "Meter(s)";
         // NODE::show_node();
     }
+    void upgrade();
+    int watermaxstat(){
+        return watermax;
+    };
+    int waternowstat(){
+        return waternow;
+    };
+    void addwater(int water){
+        //cout<<"Adding "<<water<<endl;
+        waternow+=water;
+        //cout<<"waternow: "<<waternow<<endl;
+    }
+    int fertmaxstat(){
+        return fertmax;
+    };
+    int fertnowstat(){
+        return fertnow;
+    };
+    void addfert(int fert){
+        //cout<<"Adding "<<fert<<endl;
+        fertnow+=fert;
+        //cout<<"fertnow: "<<fertnow<<endl;
+    }
+    int treelevelstat(){
+        return treelevel;
+    }
+    void treelevelup();
 };
 
 tree::tree(int v, int w, int x, int y, int z, int data) : NODE(data)
@@ -44,8 +71,20 @@ tree::~tree()
 
 void tree::display()
 {
-    cout << " Water                 :" << waternow << " / " << watermax << endl;
-    cout << " Fertilizer            :" << waternow << " / " << watermax << endl;
-    cout << " Height               : " << size << endl;
+    cout << " Water                 : " << waternowstat() << " / " << watermaxstat() << endl;
+    cout << " Fertilizer            : " << fertnowstat() << " / " << fertmaxstat() << endl;
+    cout << " Height                : " << size << endl;
 }
 #endif
+
+void tree::treelevelup(){
+    if(waternowstat()==watermaxstat()&&fertnowstat()==fertmaxstat()){
+        treelevel++;
+        waternow=0;
+        fertnow=0;
+        cout<<"[[ Level up! Now the tree is level "<<treelevelstat()<<" ]]"<<endl;
+    }
+    cout << " [Requirement]"<<endl;
+    cout << " Water                :" << waternowstat() << " / " << watermaxstat() << endl;
+    cout << " Fertilizer           :" << fertnowstat() << " / " << fertmaxstat() << endl;
+}
