@@ -61,7 +61,7 @@ void start(int lv)
              << "(5) Tree Info     (9) Exit" << endl;
 
         cin >> i;
-        system("CLS");
+        system("clear");
         if (i == 1)
         {
             // watering();
@@ -187,6 +187,7 @@ void cutting(player *p)
              << "(1) Attack       (2) Skill" << endl
              << "(3) Run Away" << endl;
         cin >> A;
+        system("clear");
         if (A == 1)
         {
             B = rollDice();
@@ -195,9 +196,11 @@ void cutting(player *p)
         }
         else if (A == 2)
         {
+            cout<<"[SKILL]"<<endl;
             cout << "(1) Heal (+20 treelife cost 20 mana)" << endl;
             cout << "(1) Heal   (2)" << endl;
             cout << "(1) Heal   (2)" << endl;
+            cout<<"---------------------------------------"<< endl;
         }
         else if (A == 3)
         {
@@ -257,6 +260,7 @@ int choose()
     cout << "(4) Maple         (5) Palm          (6) Olive      " << endl;
     cout << "(0) Done" << endl;
     cin >> i;
+    system("clear");
     return i;
 }
 

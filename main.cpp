@@ -40,6 +40,6 @@ int menu()
          << "(1) Planting         (2) Rule" << endl;
     cout << "(3) End" << endl;
     cin >> i;
-
+    system("clear");
     return i;
 }
