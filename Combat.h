@@ -22,7 +22,11 @@ int rollDice(){
 
 void Dice(int i, int x)
 {
-    cout<<"      -----"<<"        -----"<<endl;
-    cout<<"You : - "<<i<<" -"<<"  Weed: - "<<x<<" -"<<endl;
-    cout<<"      -----"<<"        -----"<<endl<<endl;
+    cout << endl
+         << "////////////////////////////////////" << endl;
+    cout << "///        -----          -----  ///" << endl;
+    cout << "///  You : - " << i << " -    Weed: - " << x << " -  ///" << endl;
+    cout << "///        -----          -----  ///" << endl;
+    cout << "////////////////////////////////////" << endl<<endl;
+    cout<<endl;
 }
