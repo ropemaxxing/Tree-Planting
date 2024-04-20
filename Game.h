@@ -180,7 +180,7 @@ void cutting(player *p)
     int r = (q % 2) + 1;
     weed *w = new weed();
     int A, B, C, treelife = 100;
-    while (w->hp > 0 || treelife > 0)
+    while (w->hp > 0)
     {
         cout << "Weed HP : " << w->hp << endl;
         cout << "Enter" << endl
@@ -203,6 +203,10 @@ void cutting(player *p)
         {
             break;
         }
+        else if (treelife <= 0)
+        {
+            break;
+        }
     }
     if (w->hp <= 0)
     {
@@ -222,6 +226,7 @@ void cutting(player *p)
     }
     if (treelife <= 0)
     {
+        cout<<"Tree dead";
     }
 }
 
