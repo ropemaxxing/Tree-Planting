@@ -26,7 +26,7 @@ public:
   }
 };
 
-Oak::Oak(int v,int w,int x, int y, int z, int data,int lv) : tree(v,w,x,y,z,data)
+Oak::Oak(int v,int w,int x, int y, int z, int data,int lv) : tree(v,w,x,y,z,data,lv)
 {
   size = v;
   waternow = w;
@@ -140,7 +140,7 @@ public:
   }
 };
 
-Pine::Pine(int v,int w,int x, int y, int z, int data,int lv) : tree(v,w,x,y,z,data)
+Pine::Pine(int v,int w,int x, int y, int z, int data,int lv) : tree(v,w,x,y,z,data,lv)
 {
 }
 
@@ -148,7 +148,7 @@ Pine::~Pine()
 {
 }
 
-Birch::Birch(int v,int w,int x, int y, int z, int data,int lv) : tree(v,w,x,y,z,data)
+Birch::Birch(int v,int w,int x, int y, int z, int data,int lv) : tree(v,w,x,y,z,data,lv)
 {
 }
 
@@ -156,7 +156,7 @@ Birch::~Birch()
 {
 }
 
-Maple::Maple(int v,int w,int x, int y, int z, int data,int lv) : tree(v,w,x,y,z,data)
+Maple::Maple(int v,int w,int x, int y, int z, int data,int lv) : tree(v,w,x,y,z,data,lv)
 {
 }
 
@@ -164,7 +164,7 @@ Maple::~Maple()
 {
 }
 
-Palm::Palm(int v,int w,int x, int y, int z, int data,int lv) : tree(v,w,x,y,z,data)
+Palm::Palm(int v,int w,int x, int y, int z, int data,int lv) : tree(v,w,x,y,z,data,lv)
 {
 }
 
@@ -172,7 +172,7 @@ Palm::~Palm()
 {
 }
 
-Olive::Olive(int v,int w,int x, int y, int z, int data,int lv) : tree(v,w,x,y,z,data)
+Olive::Olive(int v,int w,int x, int y, int z, int data,int lv) : tree(v,w,x,y,z,data,lv)
 {
 }
 
@@ -192,11 +192,11 @@ void Oak::display()
   cout << " Wood Hardness        : Very Hard" << endl;
   cout << " Water Requirement    : Medium to High" << endl;
   cout << " Wildlife             : Bird Squiral Fox Deer" << endl;
-  cout<<  "Tree Level            : "<< treelevelstat()<<endl;
+  cout << " Tree Level           : "<< treelevelstat()<<endl;
   cout << "------------------------------------------------" << endl;
-  cout<<"[Requirement]"<<endl;
-  cout << "Water                 :" << waternowstat() << " / " << watermaxstat() << endl;
-  cout << "Fertilizer            :" << fertnowstat() << " / " << fertmaxstat() << endl;
+  cout << " [Requirement]"<<endl;
+  cout << " Water                : " << waternowstat() << " / " << watermaxstat() << endl;
+  cout << " Fertilizer           : " << fertnowstat() << " / " << fertmaxstat() << endl;
 }
 
 void Pine::display()
@@ -214,8 +214,8 @@ void Pine::display()
   cout << "------------------------------------------------" << endl;
   cout << " Tree Level           : "<< treelevelstat()<<endl;
   cout << " [Requirement]"<<endl;
-  cout << " Water                :" << waternowstat() << " / " << watermaxstat() << endl;
-  cout << " Fertilizer           :" << fertnowstat() << " / " << fertmaxstat() << endl;
+  cout << " Water                : " << waternowstat() << " / " << watermaxstat() << endl;
+  cout << " Fertilizer           : " << fertnowstat() << " / " << fertmaxstat() << endl;
 }
 
 void Birch::display()
@@ -233,8 +233,8 @@ void Birch::display()
   cout << "------------------------------------------------" << endl;
   cout << " Tree Level           : "<< treelevelstat()<<endl;
   cout << " [Requirement]"<<endl;
-  cout << " Water                :" << waternowstat() << " / " << watermaxstat() << endl;
-  cout << " Fertilizer           :" << fertnowstat() << " / " << fertmaxstat() << endl;
+  cout << " Water                : " << waternowstat() << " / " << watermaxstat() << endl;
+  cout << " Fertilizer           : " << fertnowstat() << " / " << fertmaxstat() << endl;
 }
 
 void Maple::display()
@@ -253,8 +253,8 @@ void Maple::display()
   cout << "------------------------------------------------" << endl;
   cout << " Tree Level           : "<< treelevelstat()<<endl;
   cout << " [Requirement]"<<endl;
-  cout << " Water                :" << waternowstat() << " / " << watermaxstat() << endl;
-  cout << " Fertilizer           :" << fertnowstat() << " / " << fertmaxstat() << endl;
+  cout << " Water                : " << waternowstat() << " / " << watermaxstat() << endl;
+  cout << " Fertilizer           : " << fertnowstat() << " / " << fertmaxstat() << endl;
 }
 
 void Palm::display()
@@ -272,8 +272,8 @@ void Palm::display()
   cout << "------------------------------------------------" << endl;
   cout << " Tree Level           : "<< treelevelstat()<<endl;
   cout << " [Requirement]"<<endl;
-  cout << " Water                :" << waternowstat() << " / " << watermaxstat() << endl;
-  cout << " Fertilizer           :" << fertnowstat() << " / " << fertmaxstat() << endl;
+  cout << " Water                : " << waternowstat() << " / " << watermaxstat() << endl;
+  cout << " Fertilizer           : " << fertnowstat() << " / " << fertmaxstat() << endl;
 }
 
 void Olive::display()
@@ -291,7 +291,7 @@ void Olive::display()
   cout << "------------------------------------------------" << endl;
   cout << " Tree Level           : "<< treelevelstat()<<endl;
   cout << " [Requirement]"<<endl;
-  cout << " Water                :" << waternowstat() << " / " << watermaxstat() << endl;
-  cout << " Fertilizer           :" << fertnowstat() << " / " << fertmaxstat() << endl;
+  cout << " Water                : " << waternowstat() << " / " << watermaxstat() << endl;
+  cout << " Fertilizer           : " << fertnowstat() << " / " << fertmaxstat() << endl;
 }
 #endif

@@ -16,7 +16,7 @@ class tree : public NODE
     int fertnow;
 
 public:
-    tree(int, int, int, int, int, int);
+    tree(int, int, int, int, int, int,int);
     ~tree();
     virtual void display();
     virtual void show_node()
@@ -54,13 +54,14 @@ public:
     void treelevelup();
 };
 
-tree::tree(int v, int w, int x, int y, int z, int data) : NODE(data)
+tree::tree(int v, int w, int x, int y, int z, int data,int lv) : NODE(data)
 {
     size = v;
     waternow = w;
     watermax = x;
     fertnow = y;
     fertmax = z;
+    treelevel = lv;
 }
 
 tree::~tree()
@@ -85,6 +86,6 @@ void tree::treelevelup(){
         cout<<"[[ Level up! Now the tree is level "<<treelevelstat()<<" ]]"<<endl;
     }
     cout << " [Requirement]"<<endl;
-    cout << " Water                :" << waternowstat() << " / " << watermaxstat() << endl;
-    cout << " Fertilizer           :" << fertnowstat() << " / " << fertmaxstat() << endl;
+    cout << " Water                : " << waternowstat() << " / " << watermaxstat() << endl;
+    cout << " Fertilizer           : " << fertnowstat() << " / " << fertmaxstat() << endl;
 }
