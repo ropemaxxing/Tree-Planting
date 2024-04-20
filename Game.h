@@ -228,7 +228,7 @@ void cutting(player *p)
         }
     }
     //if(treelife<=0) ~tree();
-    if (head->hp <= 0)
+    if (head == nullptr)
     {
         if (r % 2 == 0)
         {
