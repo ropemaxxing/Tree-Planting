@@ -2,7 +2,7 @@
 #define player_h
 #include <iostream>
 #include <iomanip>
-#include "NODE.h"
+#include "TreeStat.h"
 
 class player
 {
@@ -20,6 +20,9 @@ public:
     void goldchange(int);
     void show();
     void manachange(int);
+    void baseatkchange(int);
+    int getbaseatk();
+
 };
 
 player::player(int w, int f, int g, int A, int m)
@@ -59,6 +62,16 @@ void player::goldchange(int g)
 void player::manachange(int m)
 {
     this->mana += m;
+}
+
+void player::baseatkchange(int a)
+{
+    this->BASEATK = a;
+}
+
+int player::getbaseatk()
+{
+    return this->BASEATK;
 }
 
 void player::show()

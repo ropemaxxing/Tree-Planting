@@ -52,6 +52,7 @@ public:
         return treelevel;
     }
     void treelevelup();
+    int getlevel();
 };
 
 tree::tree(int v, int w, int x, int y, int z, int data,int lv) : NODE(data)
@@ -76,7 +77,7 @@ void tree::display()
     cout << " Fertilizer            : " << fertnowstat() << " / " << fertmaxstat() << endl;
     cout << " Height                : " << size << endl;
 }
-#endif
+
 
 void tree::treelevelup(){
     if(waternowstat()==watermaxstat()&&fertnowstat()==fertmaxstat()){
@@ -89,3 +90,10 @@ void tree::treelevelup(){
     cout << " Water                : " << waternowstat() << " / " << watermaxstat() << endl;
     cout << " Fertilizer           : " << fertnowstat() << " / " << fertmaxstat() << endl;
 }
+
+int tree::getlevel()
+{
+    return (this->treelevel) ;
+}
+
+#endif

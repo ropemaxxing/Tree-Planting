@@ -58,6 +58,7 @@ void start(int lv)
     // water,fert,gold,BASEATK,mana
     player *p = new player(1000, 1000, 1000, 1000, 1000);
     int i = 0;
+    int glv;
     while (1)
     {
         cout << endl;
@@ -72,17 +73,21 @@ void start(int lv)
         {
             watering(p, t);
             t->treelevelup();
+            glv = t->getlevel();
+            p->baseatkchange(glv);
         }
         else if (i == 2)
         {
             puttingfert(p, t);
             t->treelevelup();
+            glv = t->getlevel();
+            p->baseatkchange(glv);
         }
         else if (i == 3)
         {
             cutting(p);
         }
-        else if (i == 3)
+        else if (i == 4)
         {
             p->show();
         }
@@ -360,7 +365,7 @@ void cutting(player *p)
     int q = rand();
     int g = rand();
     int gold = (g % 10) + 20;
-    int r = (q % 2) + 1;
+    int r = (q % 1) + 1;
 
     weed *w;
     weed *head = nullptr;
@@ -382,7 +387,7 @@ void cutting(player *p)
     }
 
     bubblesort(&head, 10);
-    printlist(head);
+    //printlist(head);
     int count = 1;
 
     int A, B, C, treelife = 100;
@@ -395,7 +400,9 @@ void cutting(player *p)
         cin >> A;
         if (A == 1)
         {
-            B = 6; // rollDice();
+            C = p->getbaseatk();
+            B = rollDice() + C;
+            cout << "Your Base ATK : " << C << endl;
             cout << "Weed has taken " << B << " damage(s)." << endl;
             head->set_weed_hp(head->hp - B);
         }
@@ -420,7 +427,6 @@ void cutting(player *p)
         if (head == nullptr)
             break;
     }
-    // if(treelife<=0) ~tree();
     if (head == nullptr)
     {
         if (r % 2 == 0)

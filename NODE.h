@@ -26,6 +26,7 @@ public:
       virtual void addfert(int)=0;
 
       virtual void treelevelup()=0;
+      virtual int getlevel()=0;
 };
 
 NODE::NODE(int x)
