@@ -26,27 +26,27 @@ void start(int lv)
     NODE *t;
     if (lv == 1)
     {
-        t = new Oak(lv);
+        t = new Oak(0, 0, 15, 0, 15, lv);
     }
     else if (lv == 2)
     {
-        t = new Pine(lv);
+        t = new Pine(0, 0, 15, 0, 15, lv);
     }
     else if (lv == 3)
     {
-        t = new Birch(lv);
+        t = new Birch(0, 0, 15, 0, 15, lv);
     }
     else if (lv == 4)
     {
-        t = new Maple(lv);
+        t = new Maple(0, 0, 15, 0, 15, lv);
     }
     else if (lv == 5)
     {
-        t = new Palm(lv);
+        t = new Palm(0, 0, 15, 0, 15, lv);
     }
     else if (lv == 6)
     {
-        t = new Olive(lv);
+        t = new Olive(0, 0, 15, 0, 15, lv);
     }
     A.add_node(t);
 

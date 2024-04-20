@@ -9,24 +9,15 @@ using namespace std;
 class Oak : public tree
 {
 private:
-  int minh = 20;
-  int maxh = 40;
-  int minl = 200;
-  int maxl = 500;
   int waternow;
   int watermax;
   int fertnow;
   int fertmax;
   int size;
-  string sp = "Oak";
-  string sname = "Quercus spp.";
-  string le = "Dicotyledon";
-  string wo = "Very Hard";
-  string wl = "Bird Squiral Fox Deer";
-  string wa = "Medium to High";
+  int level;
 
 public:
-  Oak(int);
+  Oak(int = 0, int = 0,int = 15,int = 0, int = 15, int = 0);
   ~Oak();
   void display();
   void show_node()
@@ -35,8 +26,9 @@ public:
   }
 };
 
-Oak::Oak(int s) : tree(s)
+Oak::Oak(int v,int w,int x, int y, int z, int data) : tree(v,w,x,y,z,data)
 {
+
 }
 
 Oak::~Oak()
@@ -46,24 +38,14 @@ Oak::~Oak()
 class Pine : public tree
 {
 private:
-  int minh = 20;
-  int maxh = 50;
-  int minl = 100;
-  int maxl = 300;
   int waternow;
   int watermax;
   int fertnow;
   int fertmax;
   int size;
-  string sp = "Pine";
-  string sname = "Pinus spp.";
-  string le = "Monocotyledon";
-  string wo = "Medium";
-  string wa = "Low to Medium";
-  string wl = "Bird Squiral Reptile";
 
 public:
-  Pine(int);
+  Pine(int = 0, int = 0,int = 15,int = 0, int = 15, int = 0);
   ~Pine();
   void display();
   void show_node()
@@ -75,24 +57,14 @@ public:
 class Birch : public tree
 {
 private:
-  int minh = 10;
-  int maxh = 25;
-  int minl = 30;
-  int maxl = 50;
   int waternow;
   int watermax;
   int fertnow;
   int fertmax;
   int size;
-  string sp = "Birch";
-  string sname = "Betula spp.";
-  string le = "Monocotyledon";
-  string wo = "Medium";
-  string wa = "High";
-  string wl = "Bird Squiral Rodent";
 
 public:
-  Birch(int);
+  Birch(int = 0, int = 0,int = 15,int = 0, int = 15, int = 0);
   ~Birch();
   void display();
   void show_node()
@@ -121,7 +93,7 @@ private:
   string wl = "Bird Squiral Rodent";
 
 public:
-  Maple(int);
+  Maple(int = 0, int = 0,int = 15,int = 0, int = 15, int = 0);
   ~Maple();
   void display();
   void show_node()
@@ -133,25 +105,14 @@ public:
 class Palm : public tree
 {
 private:
-  int minh = 5;
-  int maxh = 30;
-  int minl = 50;
-  int maxl = 100;
   int waternow;
   int watermax;
   int fertnow;
   int fertmax;
   int size;
 
-  string sp = "Palm";
-  string sname = "Arecaceae spp.";
-  string le = "Monocotyledon";
-  string wo = "Soft";
-  string wa = "High";
-  string wl = "Bird Monkey Reptile";
-
 public:
-  Palm(int);
+  Palm(int = 0, int = 0,int = 15,int = 0, int = 15, int = 0);
   ~Palm();
   void display();
   void show_node()
@@ -163,24 +124,14 @@ public:
 class Olive : public tree
 {
 private:
-  int minh = 5;
-  int maxh = 15;
-  int minl = 150;
-  int maxl = 2000;
   int waternow;
   int watermax;
   int fertnow;
   int fertmax;
   int size;
-  string sp = "Olive";
-  string sname = "Olea europaea L.";
-  string le = "Dicotyledon";
-  string wo = "Medium";
-  string wa = "Medium";
-  string wl = "Bird Insect Reptile";
 
 public:
-  Olive(int);
+  Olive(int = 0, int = 0,int = 15,int = 0, int = 15, int = 0);
   ~Olive();
   void display();
   void show_node()
@@ -189,7 +140,7 @@ public:
   }
 };
 
-Pine::Pine(int s) : tree(s)
+Pine::Pine(int v,int w,int x, int y, int z, int data) : tree(v,w,x,y,z,data)
 {
 }
 
@@ -197,7 +148,7 @@ Pine::~Pine()
 {
 }
 
-Birch::Birch(int s) : tree(s)
+Birch::Birch(int v,int w,int x, int y, int z, int data) : tree(v,w,x,y,z,data)
 {
 }
 
@@ -205,7 +156,7 @@ Birch::~Birch()
 {
 }
 
-Maple::Maple(int s) : tree(s)
+Maple::Maple(int v,int w,int x, int y, int z, int data) : tree(v,w,x,y,z,data)
 {
 }
 
@@ -213,7 +164,7 @@ Maple::~Maple()
 {
 }
 
-Palm::Palm(int s) : tree(s)
+Palm::Palm(int v,int w,int x, int y, int z, int data) : tree(v,w,x,y,z,data)
 {
 }
 
@@ -221,7 +172,7 @@ Palm::~Palm()
 {
 }
 
-Olive::Olive(int s) : tree(s)
+Olive::Olive(int v,int w,int x, int y, int z, int data) : tree(v,w,x,y,z,data)
 {
 }
 
@@ -232,14 +183,14 @@ Olive::~Olive()
 void Oak::display()
 {
   cout << " Height               : " << size << endl;
-  cout << " Species              : " << sp << endl;
-  cout << " Science Name         : " << sname << endl;
-  cout << " Average Height       : " << minh << " - " << maxh << " metres" << endl;
-  cout << " Avereage Lifespan    : " << minl << " - " << maxl << " years" << endl;
-  cout << " Leaf Type            : " << le << endl;
-  cout << " Wood Hardness        : " << wo << endl;
-  cout << " Water Requirement    : " << wa << endl;
-  cout << " Wildlife             : " << wl << endl;
+  cout << " Species              : Oak" << endl;
+  cout << " Science Name         : Quercus spp." << endl;
+  cout << " Average Height       : 20 - 40 metres" << endl;
+  cout << " Avereage Lifespan    : 200 - 500 years" << endl;
+  cout << " Leaf Type            : Dicotyledon" << endl;
+  cout << " Wood Hardness        : Very Hard" << endl;
+  cout << " Water Requirement    : Medium to High" << endl;
+  cout << " Wildlife             : Bird Squiral Fox Deer" << endl;
   cout << "------------------------------------------------" << endl;
   cout << "Water                 :" << waternow << " / " << watermax << endl;
   cout << "Fertilizer            :" << fertnow << " / " << fertmax << endl;
@@ -248,14 +199,14 @@ void Oak::display()
 void Pine::display()
 {
   cout << " Height               : " << size << endl;
-  cout << " Species              : " << sp << endl;
-  cout << " Science Name         : " << sname << endl;
-  cout << " Average Height       : " << minh << " - " << maxh << " metres" << endl;
-  cout << " Avereage Lifespan    : " << minl << " - " << maxl << " years" << endl;
-  cout << " Leaf Type            : " << le << endl;
-  cout << " Wood Hardness        : " << wo << endl;
-  cout << " Water Requirement    : " << wa << endl;
-  cout << " Wildlife             : " << wl << endl;
+  cout << " Species              : Pine" << endl;
+  cout << " Science Name         : Pinus spp." << endl;
+  cout << " Average Height       : 20 - 50 metres" << endl;
+  cout << " Avereage Lifespan    : 100 - 300 years" << endl;
+  cout << " Leaf Type            : Monocotyledon" << endl;
+  cout << " Wood Hardness        : Medium" << endl;
+  cout << " Water Requirement    : Low to Medium" << endl;
+  cout << " Wildlife             : Bird Squiral Reptile" << endl;
   cout << "------------------------------------------------" << endl;
   cout << "Water                 :" << waternow << " / " << watermax << endl;
   cout << "Fertilizer            :" << fertnow << " / " << fertmax << endl;
@@ -264,14 +215,14 @@ void Pine::display()
 void Birch::display()
 {
   cout << " Height               : " << size << endl;
-  cout << " Species              : " << sp << endl;
-  cout << " Science Name         : " << sname << endl;
-  cout << " Average Height       : " << minh << " - " << maxh << " metres" << endl;
-  cout << " Avereage Lifespan    : " << minl << " - " << maxl << " years" << endl;
-  cout << " Leaf Type            : " << le << endl;
-  cout << " Wood Hardness        : " << wo << endl;
-  cout << " Water Requirement    : " << wa << endl;
-  cout << " Wildlife             : " << wl << endl;
+  cout << " Species              : Birch" << endl;
+  cout << " Science Name         : Betula spp." << endl;
+  cout << " Average Height       : 10 - 25 metres" << endl;
+  cout << " Avereage Lifespan    : 30 - 50 years" << endl;
+  cout << " Leaf Type            : Monocotyledon" << endl;
+  cout << " Wood Hardness        : Medium" << endl;
+  cout << " Water Requirement    : High" << endl;
+  cout << " Wildlife             : Bird Squiral Rodent" << endl;
   cout << "------------------------------------------------" << endl;
   cout << "Water                 :" << waternow << " / " << watermax << endl;
   cout << "Fertilizer            :" << fertnow << " / " << fertmax << endl;
@@ -280,14 +231,14 @@ void Birch::display()
 void Maple::display()
 {
   cout << " Height               : " << size << endl;
-  cout << " Species              : " << sp << endl;
-  cout << " Science Name         : " << sname << endl;
-  cout << " Average Height       : " << minh << " - " << maxh << " metres" << endl;
-  cout << " Avereage Lifespan    : " << minl << " - " << maxl << " years" << endl;
-  cout << " Leaf Type            : " << le << endl;
-  cout << " Wood Hardness        : " << wo << endl;
-  cout << " Water Requirement    : " << wa << endl;
-  cout << " Wildlife             : " << wl << endl;
+  cout << " Species              : Maple" << endl;
+  cout << " Science Name         : Acer spp." << endl;
+  cout << " Average Height       : 10 - 30 metres" << endl;
+  cout << " Avereage Lifespan    : 100 - 200 years" << endl;
+  cout << " Leaf Type            : Dicotyledon" << endl;
+  cout << " Wood Hardness        : Hard" << endl;
+  cout << " Water Requirement    : Medium to Hard" << endl;
+  cout << " Wildlife             : Bird Squiral Rodent" << endl;
   cout << "------------------------------------------------" << endl;
   cout << "Water                 :" << waternow << " / " << watermax << endl;
   cout << "Fertilizer            :" << fertnow << " / " << fertmax << endl;
@@ -296,14 +247,14 @@ void Maple::display()
 void Palm::display()
 {
   cout << " Height               : " << size << endl;
-  cout << " Species              : " << sp << endl;
-  cout << " Science Name         : " << sname << endl;
-  cout << " Average Height       : " << minh << " - " << maxh << " metres" << endl;
-  cout << " Avereage Lifespan    : " << minl << " - " << maxl << " years" << endl;
-  cout << " Leaf Type            : " << le << endl;
-  cout << " Wood Hardness        : " << wo << endl;
-  cout << " Water Requirement    : " << wa << endl;
-  cout << " Wildlife             : " << wl << endl;
+  cout << " Species              : Palm" << endl;
+  cout << " Science Name         : Arecaceae spp." << endl;
+  cout << " Average Height       : 5 - 30 metres" << endl;
+  cout << " Avereage Lifespan    : 50 - 100 years" << endl;
+  cout << " Leaf Type            : Monocotyledon" << endl;
+  cout << " Wood Hardness        : Soft" << endl;
+  cout << " Water Requirement    : High" << endl;
+  cout << " Wildlife             : Bird Monkey Reptile" << endl;
   cout << "------------------------------------------------" << endl;
   cout << "Water                 :" << waternow << " / " << watermax << endl;
   cout << "Fertilizer            :" << fertnow << " / " << fertmax << endl;
@@ -312,14 +263,14 @@ void Palm::display()
 void Olive::display()
 {
   cout << " Height               : " << size << endl;
-  cout << " Species              : " << sp << endl;
-  cout << " Science Name         : " << sname << endl;
-  cout << " Average Height       : " << minh << " - " << maxh << " metres" << endl;
-  cout << " Avereage Lifespan    : " << minl << " - " << maxl << " years" << endl;
-  cout << " Leaf Type            : " << le << endl;
-  cout << " Wood Hardness        : " << wo << endl;
-  cout << " Water Requirement    : " << wa << endl;
-  cout << " Wildlife             : " << wl << endl;
+  cout << " Species              : Olive" << endl;
+  cout << " Science Name         : Olea europaea L." << endl;
+  cout << " Average Height       : 5 - 15 metres" << endl;
+  cout << " Avereage Lifespan    : 150 - 2000 years" << endl;
+  cout << " Leaf Type            : Dicotyledon" << endl;
+  cout << " Wood Hardness        : Medium" << endl;
+  cout << " Water Requirement    : Medium" << endl;
+  cout << " Wildlife             : Bird Insect Reptile" << endl;
   cout << "------------------------------------------------" << endl;
   cout << "Water                 :" << waternow << " / " << watermax << endl;
   cout << "Fertilizer            :" << fertnow << " / " << fertmax << endl;
