@@ -10,7 +10,8 @@
 
 using namespace std;
 
-// void watering();
+void watering(player*,NODE*);
+void puttingfert(player*,NODE*);
 void start(int);
 void Rule();
 void cutting(player *);
@@ -24,6 +25,7 @@ void start(int lv)
     LL A;
     int data;
     NODE *t;
+    //size,waternow,watermax,fertnow,fertmax
     if (lv == 1)
     {
         t = new Oak(0, 0, 15, 0, 15, lv);
@@ -50,38 +52,45 @@ void start(int lv)
     }
     A.add_node(t);
 
-    player *p = new player();
+    //water,fert,gold,BASEATK,mana
+    player *p = new player(1000,1000,1000,1000,1000);
     int i = 0;
     while (1)
     {
         cout << endl;
         cout << "Enter" << endl
-             << "(1) Watering      (2) Fighting" << endl
-             << "(3) Inventory     (4) Shop" << endl
-             << "(5) Tree Info     (9) Exit" << endl;
+             << "(1) Watering      (2) Put fertilizer" << endl
+             << "(3) Fighting      (4) Inventory" << endl
+             << "(5) Shop          (6) Tree info" << endl<<endl
+             << "(0) Exit"<<endl;
 
         cin >> i;
         system("clear");
         if (i == 1)
         {
-            // watering();
+            watering(p,t);
+            t->treelevelup();
             //  continue;;
         }
-        else if (i == 2)
+        else if (i == 2){
+            puttingfert(p,t);
+            t->treelevelup();
+        }
+        else if (i == 3)
         {
             cutting(p);
         }
-        else if (i == 3)
+        else if (i == 4)
         {
             p->show();
             // continue;;
         }
-        else if (i == 4)
+        else if (i == 5)
         {
 
             // continue;;
         }
-        else if (i == 5)
+        else if (i == 6)
         {
             treeinfo(t);
             // treeinfo();
@@ -95,7 +104,7 @@ void start(int lv)
         else if (i == 8)
         {
         }
-        else if (i == 9)
+        else if (i == 0)
             break;
         cout << endl
              << "----------------------------------" << endl;
@@ -187,6 +196,7 @@ void cutting(player *p)
              << "(1) Attack       (2) Skill" << endl
              << "(3) Run Away" << endl;
         cin >> A;
+        system("clear");
         if (A == 1)
         {
             B = rollDice();
@@ -245,10 +255,38 @@ void planting()
     // A.show_all();
 }
 
-void watering(player *p)
+void watering(player *p, NODE *t)
 {
-    // if(water==0) cout<<"You don't have enough water!"<<endl;
-    // else () //
+    int wateruse=t->watermaxstat()-t->waternowstat();
+    //cout<<wateruse<<endl;
+    if(p->wateramount()<=0) cout<<"You don't have enough water!"<<endl;
+    else if(p->wateramount() < wateruse){
+        cout << "You watered the tree with " << p->wateramount() << " units of water." << endl;
+        t->addwater(p->wateramount());
+        p->usewater(p->wateramount());
+    }
+    else if(p->wateramount()>wateruse) {
+        cout << "You watered the tree with " << wateruse << " units of water." << endl;
+        t->addwater(wateruse);
+        p->usewater(wateruse);
+    }
+}
+
+void puttingfert(player *p, NODE *t)
+{
+    int fertuse=t->fertmaxstat()-t->fertnowstat();
+    //cout<<wateruse<<endl;
+    if(p->fertamount()<=0) cout<<"You don't have enough fertilizer!"<<endl;
+    else if(p->fertamount() < fertuse){
+        cout << "You put " << p->fertamount() << " units of fertilizer on the tree." << endl;
+        t->addfert(p->fertamount());
+        p->usefert(p->fertamount());
+    }
+    else if(p->fertamount()>fertuse) {
+        cout << "You put " << fertuse << " units of fertilizer on the tree." << endl;
+        t->addfert(fertuse);
+        p->usefert(fertuse);
+    }
 }
 
 void end()

@@ -15,6 +15,17 @@ public:
       void insert(NODE *&);
       NODE *move_next();
       virtual ~NODE();
+      
+      //class tree function
+      virtual int watermaxstat()=0;
+      virtual int waternowstat()=0;
+      virtual void addwater(int)=0;
+
+      virtual int fertmaxstat()=0;
+      virtual int fertnowstat()=0;
+      virtual void addfert(int)=0;
+
+      virtual void treelevelup()=0;
 };
 
 NODE::NODE(int x)
