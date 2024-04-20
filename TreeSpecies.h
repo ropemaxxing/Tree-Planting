@@ -182,7 +182,7 @@ Olive::~Olive()
 
 void Oak::display()
 {
-  cout << " Height               : " << size << endl;
+  cout << " INFORMATIOM" << endl;
   cout << " Species              : Oak" << endl;
   cout << " Science Name         : Quercus spp." << endl;
   cout << " Average Height       : 20 - 40 metres" << endl;
@@ -192,13 +192,12 @@ void Oak::display()
   cout << " Water Requirement    : Medium to High" << endl;
   cout << " Wildlife             : Bird Squiral Fox Deer" << endl;
   cout << "------------------------------------------------" << endl;
-  cout << "Water                 :" << waternow << " / " << watermax << endl;
-  cout << "Fertilizer            :" << fertnow << " / " << fertmax << endl;
+  tree::display();
 }
 
 void Pine::display()
 {
-  cout << " Height               : " << size << endl;
+  cout << " INFORMATIOM" << endl;
   cout << " Species              : Pine" << endl;
   cout << " Science Name         : Pinus spp." << endl;
   cout << " Average Height       : 20 - 50 metres" << endl;
@@ -208,13 +207,11 @@ void Pine::display()
   cout << " Water Requirement    : Low to Medium" << endl;
   cout << " Wildlife             : Bird Squiral Reptile" << endl;
   cout << "------------------------------------------------" << endl;
-  cout << "Water                 :" << waternow << " / " << watermax << endl;
-  cout << "Fertilizer            :" << fertnow << " / " << fertmax << endl;
 }
 
 void Birch::display()
 {
-  cout << " Height               : " << size << endl;
+  cout << " INFORMATIOM" << endl;
   cout << " Species              : Birch" << endl;
   cout << " Science Name         : Betula spp." << endl;
   cout << " Average Height       : 10 - 25 metres" << endl;
@@ -224,13 +221,11 @@ void Birch::display()
   cout << " Water Requirement    : High" << endl;
   cout << " Wildlife             : Bird Squiral Rodent" << endl;
   cout << "------------------------------------------------" << endl;
-  cout << "Water                 :" << waternow << " / " << watermax << endl;
-  cout << "Fertilizer            :" << fertnow << " / " << fertmax << endl;
 }
 
 void Maple::display()
 {
-  cout << " Height               : " << size << endl;
+  cout << " INFORMATIOM" << endl;
   cout << " Species              : Maple" << endl;
   cout << " Science Name         : Acer spp." << endl;
   cout << " Average Height       : 10 - 30 metres" << endl;
@@ -240,13 +235,11 @@ void Maple::display()
   cout << " Water Requirement    : Medium to Hard" << endl;
   cout << " Wildlife             : Bird Squiral Rodent" << endl;
   cout << "------------------------------------------------" << endl;
-  cout << "Water                 :" << waternow << " / " << watermax << endl;
-  cout << "Fertilizer            :" << fertnow << " / " << fertmax << endl;
 }
 
 void Palm::display()
 {
-  cout << " Height               : " << size << endl;
+  cout << " INFORMATIOM" << endl;
   cout << " Species              : Palm" << endl;
   cout << " Science Name         : Arecaceae spp." << endl;
   cout << " Average Height       : 5 - 30 metres" << endl;
@@ -256,13 +249,11 @@ void Palm::display()
   cout << " Water Requirement    : High" << endl;
   cout << " Wildlife             : Bird Monkey Reptile" << endl;
   cout << "------------------------------------------------" << endl;
-  cout << "Water                 :" << waternow << " / " << watermax << endl;
-  cout << "Fertilizer            :" << fertnow << " / " << fertmax << endl;
 }
 
 void Olive::display()
 {
-  cout << " Height               : " << size << endl;
+  cout << " INFORMATIOM" << endl;
   cout << " Species              : Olive" << endl;
   cout << " Science Name         : Olea europaea L." << endl;
   cout << " Average Height       : 5 - 15 metres" << endl;
@@ -272,7 +263,5 @@ void Olive::display()
   cout << " Water Requirement    : Medium" << endl;
   cout << " Wildlife             : Bird Insect Reptile" << endl;
   cout << "------------------------------------------------" << endl;
-  cout << "Water                 :" << waternow << " / " << watermax << endl;
-  cout << "Fertilizer            :" << fertnow << " / " << fertmax << endl;
 }
 #endif

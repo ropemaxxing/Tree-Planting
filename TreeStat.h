@@ -7,7 +7,7 @@
 
 using namespace std;
 
-class tree : public NODE
+class tree
 {
     int size;
     int watermax;
@@ -19,15 +19,9 @@ public:
     tree(int, int, int, int, int, int);
     ~tree();
     virtual void display();
-    virtual void show_node()
-    {
-        // tree::display();
-        // cout << "You have plant " << ty << " and now it's " << size << "Meter(s)";
-        // NODE::show_node();
-    }
 };
 
-tree::tree(int v, int w, int x, int y, int z, int data) : NODE(data)
+tree::tree(int v, int w, int x, int y, int z, int data)
 {
     size = v;
     waternow = w;
@@ -46,6 +40,7 @@ void tree::display()
 {
     cout << " Water                 :" << waternow << " / " << watermax << endl;
     cout << " Fertilizer            :" << waternow << " / " << watermax << endl;
-    cout << " Height               : " << size << endl;
+    cout << " Height                : " << size << endl;
 }
+
 #endif

@@ -10,7 +10,7 @@ class NODE
       NODE *next;
 
 public:
-      NODE(int data);
+      NODE(int data = 0);
       virtual void show_node();
       void insert(NODE *&);
       NODE *move_next();
@@ -21,7 +21,7 @@ NODE::NODE(int x)
 {
       data = x;
       next = NULL;
-      cout << "planting at " << x << endl;
+      // cout<<"planting at "<<x<<endl;
 }
 NODE::~NODE()
 {
