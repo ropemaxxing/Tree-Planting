@@ -387,7 +387,7 @@ void cutting(player *p)
     }
 
     bubblesort(&head, 10);
-    //printlist(head);
+    printlist(head);
     int count = 1;
 
     int A, B, C, treelife = 100;
