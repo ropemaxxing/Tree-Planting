@@ -187,7 +187,7 @@ void cutting(player *p)
     weed* current = nullptr;
 
     for(int i = 0 ; i<10 ; i++){
-        w = new weed("Weed",rand()%10);
+        w = new weed("Weed",rand()%10+1);
         if(head == nullptr){
             head = w;
             current = w;
@@ -226,6 +226,13 @@ void cutting(player *p)
             delete temp;
             count++;
         }
+        if (cin.fail() || (A != 1 && A != 2)) {
+            cout << "Invalid input. Please enter 1 or 2." << endl;
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            continue;
+        }
+        if(head == nullptr) break;
     }
     //if(treelife<=0) ~tree();
     if (head == nullptr)
