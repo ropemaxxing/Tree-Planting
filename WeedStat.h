@@ -26,7 +26,7 @@ weed::weed(string a, int b)
 {
     name    =   a;
     hp      =   b;
-    cout<<name<<"has spawned"<<endl;
+    //cout<<name<<" has spawned"<<endl;
 }
 
 

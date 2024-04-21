@@ -31,32 +31,32 @@ void start(int lv)
     // size,waternow,watermax,fertnow,fertmax
     if (lv == 1)
     {
-        t = new Oak(0, 0, 15, 0, 15, lv, 1);
+        t = new Pine(0, 0, 15, 0, 15, lv, 1);
     }
     else if (lv == 2)
     {
-        t = new Pine(0, 0, 15, 0, 15, lv, 1);
+        t = new Olive(0, 0, 20, 0, 20, lv, 1);
     }
     else if (lv == 3)
     {
-        t = new Birch(0, 0, 15, 0, 15, lv, 1);
+        t = new Maple(0, 0, 25, 0, 25, lv, 1);
     }
     else if (lv == 4)
     {
-        t = new Maple(0, 0, 15, 0, 15, lv, 1);
+        t = new Oak(0, 0, 30, 0, 30, lv, 1);
     }
     else if (lv == 5)
     {
-        t = new Palm(0, 0, 15, 0, 15, lv, 1);
+        t = new Palm(0, 0, 35, 0, 35, lv, 1);
     }
     else if (lv == 6)
     {
-        t = new Olive(0, 0, 15, 0, 15, lv, 1);
+        t = new Birch(0, 0, 40, 0, 40, lv, 1);
     }
     A.add_node(t);
 
     // water,fert,gold,BASEATK,mana
-    player *p = new player(1000, 1000, 1000, 1000, 1000);
+    player *p = new player(0, 0, 0);
     int i = 0;
     int glv;
     while (1)
@@ -169,6 +169,7 @@ void Rule()
     cout << "                    ;%@@@@%::;." << endl;
     cout << "                   ;%@@@@%%:;;;." << endl;
     cout << "               ...;%@@@@@%%:;;;;,..   " << endl;
+    cout << "--------------------------------------------------" << endl;
 }
 
 // void cutting(player *p)
@@ -286,8 +287,8 @@ int choose()
 {
     int i;
     cout << "Select Tree Number(1 easy - 6 hard)" << endl;
-    cout << "(1) Oak           (2) Pine          (3) Birch      " << endl;
-    cout << "(4) Maple         (5) Palm          (6) Olive      " << endl;
+    cout << "(1) Pine        (2) Olive         (3) Maple      " << endl;
+    cout << "(4) Oak         (5) Palm          (6) Birch      " << endl;
     cout << "(0) Done" << endl;
     cin >> i;
     return i;
@@ -301,8 +302,8 @@ void treeinfo(NODE *t)
 
 void bubblesort(weed **head, int count)
 {
-    weed **h;
-    weed *temp;
+    weed **h = head;
+    weed *temp = nullptr;
     int i, j, swapped;
     for (i = 0; i < count; i++)
     {
@@ -351,7 +352,7 @@ void bubblesort(weed **head, int count)
 
 void printlist(weed *w)
 {
-    while (w != NULL)
+    while (w != nullptr)
     {
         cout << w->hp << " || ";
         w = w->move_next();
@@ -359,13 +360,15 @@ void printlist(weed *w)
     cout << endl;
 }
 
-void cutting(player *p)
+/* void cutting(player *p)
 {
     srand(time(NULL));
     int q = rand();
     int g = rand();
     int gold = (g % 10) + 20;
     int r = (q % 1) + 1;
+    int count = 1;
+    int A, B, C, treelife = 100;
 
     weed *w;
     weed *head = nullptr;
@@ -388,9 +391,7 @@ void cutting(player *p)
 
     bubblesort(&head, 10);
     printlist(head);
-    int count = 1;
-
-    int A, B, C, treelife = 100;
+    
     while (head != nullptr)
     {
         cout << "---------------------------" << endl;
@@ -412,10 +413,21 @@ void cutting(player *p)
         }
         if (head->hp <= 0)
         {
+            if (head->hp % 2 == 0)
+        {
+            p->getwater(r);
+            cout << "You gained " << r << " water" << endl;
+        }
+        else
+        {
+            p->getfert(r);
+            cout << "You gained " << r << " fertilizers" << endl;
+        }
             weed *temp = head;
             head = head->move_next();
             delete temp;
             count++;
+            
         }
         if (cin.fail() || (A != 1 && A != 2))
         {
@@ -427,6 +439,70 @@ void cutting(player *p)
         if (head == nullptr)
             break;
     }
+    /*if (head == nullptr)
+    {
+        
+    }*/
+//} 
+
+void cutting(player *p)
+{
+    srand(time(NULL));
+    int q = rand();
+    int r = (q % 2) + 1;
+    int count = 1;
+    int A, B, C;
+    weed* w;
+    weed* head = nullptr;
+    weed* current = nullptr;
+
+    for(int i = 0 ; i<10 ; i++){
+        w = new weed("Weed",rand()%9+1);
+        if(head == nullptr){
+            head = w;
+            current = w;
+        }
+        else if(current != nullptr){
+            current->move_next() = w;
+            current = w;
+        }
+    }
+
+    bubblesort(&head,10);
+    //printlist(head);
+    
+    while (head != nullptr)
+    {
+        cout << "---------------------------"<<endl;
+        cout << "Weed ("<<count<<") HP : " << head->hp << endl;
+        cout << "Enter" << endl
+             << "(1) Attack       (2) Spare" << endl;
+        cin >> A;
+        if (A == 1)
+        {
+            B = 10+rollDice();
+            cout << "Weed has taken " << B << " damage(s)." << endl;
+            head->set_weed_hp(head->hp-B);
+        }
+        else if (A == 2)
+        {
+            break;
+        }
+        if(head->hp <= 0){
+            weed* temp = head;
+            head = head->move_next();
+            delete temp;
+            count++;
+        }
+        if (cin.fail() || (A != 1 && A != 2)) {
+            cout << "Invalid input. Please enter 1 or 2." << endl;
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            continue;
+        }
+        if(head == nullptr) break;
+    }
+    //if(treelife<=0) ~tree();
     if (head == nullptr)
     {
         if (r % 2 == 0)
@@ -439,5 +515,7 @@ void cutting(player *p)
             p->getfert(r);
             cout << "You gained " << r << " fertilizers" << endl;
         }
+        
     }
+    delete w;
 }

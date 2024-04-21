@@ -25,7 +25,7 @@ NODE2::NODE2(int x)
 }
 NODE2::~NODE2()
 {
-        cout << "Node " << data << " is being deleted" << endl;
+        //cout << "Node " << data << " is being deleted" << endl;
 }
 NODE2 *NODE2::move_next()
 {

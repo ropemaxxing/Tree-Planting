@@ -183,7 +183,6 @@ Olive::~Olive()
 void Oak::display()
 {
   cout<<"[Info]"<<endl;
-  cout << " Height               : " << size << endl;
   cout << " Species              : Oak" << endl;
   cout << " Science Name         : Quercus spp." << endl;
   cout << " Average Height       : 20 - 40 metres" << endl;
@@ -202,7 +201,6 @@ void Oak::display()
 void Pine::display()
 {
   cout<<"[Info]"<<endl;
-  cout << " Height               : " << size << endl;
   cout << " Species              : Pine" << endl;
   cout << " Science Name         : Pinus spp." << endl;
   cout << " Average Height       : 20 - 50 metres" << endl;
@@ -221,7 +219,6 @@ void Pine::display()
 void Birch::display()
 {
   cout<<"[Info]"<<endl;
-  cout << " Height               : " << size << endl;
   cout << " Species              : Birch" << endl;
   cout << " Science Name         : Betula spp." << endl;
   cout << " Average Height       : 10 - 25 metres" << endl;
@@ -240,14 +237,13 @@ void Birch::display()
 void Maple::display()
 {
   cout<<"[Info]"<<endl;
-  cout << " Height               : " << size << endl;
   cout << " Species              : Maple" << endl;
   cout << " Science Name         : Acer spp." << endl;
   cout << " Average Height       : 10 - 30 metres" << endl;
   cout << " Avereage Lifespan    : 100 - 200 years" << endl;
   cout << " Leaf Type            : Dicotyledon" << endl;
   cout << " Wood Hardness        : Hard" << endl;
-  cout << " Water Requirement    : Medium to Hard" << endl;
+  cout << " Water Requirement    : Medium to High" << endl;
   cout << " Wildlife             : Bird Squiral Rodent" << endl;
   cout<<  "Tree Level            : "<< treelevelstat()<<endl;
   cout << "------------------------------------------------" << endl;
@@ -260,7 +256,6 @@ void Maple::display()
 void Palm::display()
 {
   cout<<"[Info]"<<endl;
-  cout << " Height               : " << size << endl;
   cout << " Species              : Palm" << endl;
   cout << " Science Name         : Arecaceae spp." << endl;
   cout << " Average Height       : 5 - 30 metres" << endl;
@@ -279,7 +274,6 @@ void Palm::display()
 void Olive::display()
 {
   cout<<"[Info]"<<endl;
-  cout << " Height               : " << size << endl;
   cout << " Species              : Olive" << endl;
   cout << " Science Name         : Olea europaea L." << endl;
   cout << " Average Height       : 5 - 15 metres" << endl;

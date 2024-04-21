@@ -14,7 +14,7 @@ int main(int argc, char *argv[])
     int i;
     while (i = menu())
     {
-        system("CLS");
+        system("clear");
         if (i == 1)
         {
             planting();
