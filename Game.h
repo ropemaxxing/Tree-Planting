@@ -367,7 +367,7 @@ void cutting(player *p)
     int q = rand();
     int g = rand();
     int gold = (g % 10) + 20;
-    int r = (q % 1) + 1;
+    int r = (q % 2) + 1;
     int count = 1;
     int A, B, C, treelife = 100;
 
