@@ -56,7 +56,7 @@ void start(int lv)
     A.add_node(t);
 
     // water,fert,gold,BASEATK,mana
-    player *p = new player(0, 0, 0);
+    player *p = new player(0, 0, 1);
     int i = 0;
     int glv;
     while (1)
@@ -361,7 +361,7 @@ void printlist(weed *w)
     cout << endl;
 }
 
-/* void cutting(player *p)
+void cutting(player *p)
 {
     srand(time(NULL));
     int q = rand();
@@ -391,10 +391,11 @@ void printlist(weed *w)
     }
 
     bubblesort(&head, 10);
-    printlist(head);
+    //printlist(head);
     
     while (head != nullptr)
     {
+        if(count>10) break;
         cout << "---------------------------" << endl;
         cout << "Weed (" << count << ") HP : " << head->hp << endl;
         cout << "Enter" << endl
@@ -444,9 +445,9 @@ void printlist(weed *w)
     {
         
     }*/
-//} 
+} 
 
-void cutting(player *p)
+/*void cutting(player *p)
 {
     srand(time(NULL));
     int q = rand();
@@ -518,4 +519,4 @@ void cutting(player *p)
         }
         
     }
-}
+}*/
