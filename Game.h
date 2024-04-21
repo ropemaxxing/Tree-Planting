@@ -170,6 +170,7 @@ void Rule()
     cout << "                   ;%@@@@%%:;;;." << endl;
     cout << "               ...;%@@@@@%%:;;;;,..   " << endl;
     cout << "--------------------------------------------------" << endl;
+    cout << " Plant a tree and take care it." << endl;
 }
 
 // void cutting(player *p)
@@ -517,5 +518,4 @@ void cutting(player *p)
         }
         
     }
-    delete w;
 }

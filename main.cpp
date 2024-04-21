@@ -37,7 +37,7 @@ int menu()
     cout << endl;
     cout << "Hello and Welcome to TREE SIMULATOR" << endl;
     cout << "Enter" << endl
-         << "(1) Planting         (2) Rule" << endl;
+         << "(1) Planting         (2) Description" << endl;
     cout << "(3) End" << endl;
     cin >> i;
 
