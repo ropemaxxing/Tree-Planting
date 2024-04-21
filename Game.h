@@ -68,7 +68,17 @@ void start(int lv)
              << "(5) Tree Info     (0) Exit" << endl;
 
         cin >> i;
-        system("CLS");
+        system("clear");
+
+
+        if (cin.fail() || (i < 0 || i > 5))
+        {   
+            system("clear");
+            cout << "Invalid input. Please enter 0-5" << endl;
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            continue;
+        }
         if (i == 1)
         {
             watering(p, t);
@@ -99,6 +109,8 @@ void start(int lv)
             break;
         cout << endl
              << "----------------------------------" << endl;
+        
+             
     }
 }
 
@@ -286,12 +298,25 @@ void end()
 
 int choose()
 {
-    int i;
-    cout << "Select Tree Number(1 easy - 6 hard)" << endl;
-    cout << "(1) Pine        (2) Olive         (3) Maple      " << endl;
-    cout << "(4) Oak         (5) Palm          (6) Birch      " << endl;
-    cout << "(0) Done" << endl;
-    cin >> i;
+    int i,p=1;
+    while(p)
+    {
+        cout << "Select Tree Number(1 easy - 6 hard)" << endl;
+        cout << "(1) Pine        (2) Olive         (3) Maple      " << endl;
+        cout << "(4) Oak         (5) Palm          (6) Birch      " << endl;
+        cout << "(0) Done" << endl;
+        cin >> i;
+        system("clear");
+        if (cin.fail() || (i < 0 || i > 6))
+        {   
+            system("clear");
+            cout << "Invalid input. Please enter 0-6" << endl;
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            
+        }
+        else p=0;
+    }
     return i;
 }
 
@@ -401,6 +426,7 @@ void cutting(player *p)
         cout << "Enter" << endl
              << "(1) Attack       (2) Spare" << endl;
         cin >> A;
+        system("clear");
         if (A == 1)
         {
             C = p->getbaseatk();
@@ -431,8 +457,9 @@ void cutting(player *p)
             count++;
             
         }
-        if (cin.fail() || (A != 1 && A != 2))
-        {
+        if (cin.fail() || (A < 1 || A > 2))
+        {   
+            system("clear");
             cout << "Invalid input. Please enter 1 or 2." << endl;
             cin.clear();
             cin.ignore(numeric_limits<streamsize>::max(), '\n');

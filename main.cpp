@@ -28,18 +28,32 @@ int main(int argc, char *argv[])
             end();
             break;
         }
+        
     }
 }
 
 int menu()
 {
-    int i;
-    cout << endl;
-    cout << "Hello and Welcome to TREE SIMULATOR" << endl;
-    cout << "Enter" << endl
-         << "(1) Planting         (2) Description" << endl;
-    cout << "(3) End" << endl;
-    cin >> i;
+    int i,f=1;
+    while(f)
+    {
+        cout << endl;
+        cout << "Hello and Welcome to TREE SIMULATOR" << endl;
+        cout << "Enter" << endl
+             << "(1) Planting         (2) Description" << endl;
+        cout << "(3) End" << endl;
+        cin >> i;
+
+        if (cin.fail() || (i < 1 || i > 3))
+        {   
+            system("clear");
+            cout << "Invalid input. Please enter 1-3" << endl;
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            continue;
+        }
+        else f=0;
+    }
 
     return i;
 }
