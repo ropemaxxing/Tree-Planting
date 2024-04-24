@@ -3,6 +3,11 @@
 #include <time.h>
 #include <stdlib.h>
 
+//ANSI COLOR
+#define RESET   "\033[0m"
+#define RED     "\033[31m"
+#define GREEN   "\033[32m"
+
 using namespace std;
 
 int rollDice();
@@ -28,7 +33,7 @@ void Dice(int i, int x)
     cout << endl
          << "////////////////////////////////////" << endl;
     cout << "///        -----          -----  ///" << endl;
-    cout << "///  You : - " << i << " -    Weed: - " << x << " -  ///" << endl;
+    cout << "///  You : - " <<GREEN<< i <<RESET<< " -    Weed: - "<<RED<< x <<RESET<< " -  ///" << endl;
     cout << "///        -----          -----  ///" << endl;
     cout
         << "////////////////////////////////////" << endl

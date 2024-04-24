@@ -4,6 +4,10 @@
 #include <iomanip>
 #include "NODE.h"
 
+//ANSI COLOR
+#define RESET   "\033[0m"
+#define RED     "\033[31m"
+
 using namespace std;
 
 class tree : public NODE
@@ -67,8 +71,8 @@ tree::tree(int v, int w, int x, int y, int z, int data,int lv) : NODE(data)
 
 tree::~tree()
 {
-    cout << "How can you be this bad." << endl
-         << "You just cut tree without hesitation" << endl;
+    cout << RED << "How can you be this bad." << endl
+         << "You just cut tree without hesitation" << RESET << endl;
 }
 
 void tree::display()

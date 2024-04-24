@@ -1,9 +1,9 @@
 compile: main.cpp 
-	 g++ main.cpp -o a.exe
+	 g++ main.cpp -o play
 
 run: LL
-	 a.exe
+	 play
 
 
 clean: LL
-	 a.exe
+	 play

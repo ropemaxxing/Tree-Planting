@@ -9,6 +9,13 @@
 #include "Player.h"
 #include <limits>
 
+//ANSI COLOR
+#define RESET   "\033[0m"
+#define RED     "\033[31m"
+#define GREEN   "\033[32m"
+#define YELLOW  "\033[33m"
+#define BLUE    "\033[34m"
+
 using namespace std;
 
 void watering(player *, NODE *);
@@ -64,8 +71,9 @@ void start(int lv)
         cout << endl;
         cout << "Enter" << endl
              << "(1) Watering      (2) Put fertilizer" << endl
-             << "(3) Fighting      (4) Inventory" << endl
-             << "(5) Tree Info     (0) Exit" << endl;
+             << "(3) Pest control  (4) Inventory" << endl
+             << "(5) Tree Info" << endl <<endl
+             << "(0) Exit"<<endl;
 
         cin >> i;
         system("clear");
@@ -303,7 +311,7 @@ int choose()
     {
         cout << "Select Tree Number(1 easy - 6 hard)" << endl;
         cout << "(1) Pine        (2) Olive         (3) Maple      " << endl;
-        cout << "(4) Oak         (5) Palm          (6) Birch      " << endl;
+        cout << "(4) Oak         (5) Palm          (6) Birch      " << endl<<endl;
         cout << "(0) Done" << endl;
         cin >> i;
         system("clear");
@@ -394,7 +402,7 @@ void cutting(player *p)
     int gold = (g % 10) + 20;
     int r = (q % 2) + 1;
     int count = 1;
-    int A, B, C, treelife = 100;
+    int A, B, Bx, C, treelife = 100;
 
     weed *w;
     weed *head = nullptr;
@@ -430,9 +438,11 @@ void cutting(player *p)
         if (A == 1)
         {
             C = p->getbaseatk();
+            Bx = rollDice();
             B = rollDice() + C;
             cout << "Your Base ATK : " << C << endl;
-            cout << "Weed has taken " << B << " damage(s)." << endl;
+            cout << "Additional Damage : "<< Bx << endl;
+            cout << GREEN << "Weed has taken " << B << " damage(s)." <<RESET<< endl;
             head->set_weed_hp(head->hp - B);
         }
         else if (A == 2)
@@ -444,12 +454,12 @@ void cutting(player *p)
             if (head->hp % 2 == 0)
         {
             p->getwater(r);
-            cout << "You gained " << r << " water" << endl;
+            cout <<BLUE<< "You gained " << r << " water" <<RESET<< endl;
         }
         else
         {
             p->getfert(r);
-            cout << "You gained " << r << " fertilizers" << endl;
+            cout <<YELLOW<< "You gained " << r << " fertilizers"<<RESET<< endl;
         }
             weed *temp = head;
             head = head->move_next();
