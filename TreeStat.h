@@ -4,9 +4,7 @@
 #include <iomanip>
 #include "NODE.h"
 
-//ANSI COLOR
-#define RESET   "\033[0m"
-#define RED     "\033[31m"
+#include "color.h"
 
 using namespace std;
 
@@ -88,7 +86,7 @@ void tree::treelevelup(){
         treelevel++;
         waternow=0;
         fertnow=0;
-        cout<<"[[ Level up! Now the tree is level "<<treelevelstat()<<" ]]"<<endl;
+        cout<< GREEN << "[[ Level up! Now the tree is level "<<treelevelstat()<<" ]]"<< RESET << endl;
     }
     cout << " [Requirement]"<<endl;
     cout << " Water                : " << waternowstat() << " / " << watermaxstat() << endl;

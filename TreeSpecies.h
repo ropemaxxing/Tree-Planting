@@ -4,6 +4,8 @@
 #include <iomanip>
 #include "TreeStat.h"
 
+#include "color.h"
+
 using namespace std;
 
 class Oak : public tree
@@ -191,11 +193,11 @@ void Oak::display()
   cout << " Wood Hardness        : Very Hard" << endl;
   cout << " Water Requirement    : Medium to High" << endl;
   cout << " Wildlife             : Bird Squiral Fox Deer" << endl;
-  cout << " Tree Level           : "<< treelevelstat()<<endl;
   cout << "------------------------------------------------" << endl;
-  cout << " [Requirement]"<<endl;
+  cout << GREEN << " Tree Level           : "<< treelevelstat()<<endl;
+  cout << YELLOW << " [Requirement]"<<endl;
   cout << " Water                : " << waternowstat() << " / " << watermaxstat() << endl;
-  cout << " Fertilizer           : " << fertnowstat() << " / " << fertmaxstat() << endl;
+  cout << " Fertilizer           : " << fertnowstat() << " / " << fertmaxstat() << RESET << endl;
 }
 
 void Pine::display()
@@ -210,10 +212,10 @@ void Pine::display()
   cout << " Water Requirement    : Low to Medium" << endl;
   cout << " Wildlife             : Bird Squiral Reptile" << endl;
   cout << "------------------------------------------------" << endl;
-  cout << " Tree Level           : "<< treelevelstat()<<endl;
-  cout << " [Requirement]"<<endl;
+  cout << GREEN << " Tree Level           : "<< treelevelstat()<<endl;
+  cout << YELLOW << " [Requirement]"<<endl;
   cout << " Water                : " << waternowstat() << " / " << watermaxstat() << endl;
-  cout << " Fertilizer           : " << fertnowstat() << " / " << fertmaxstat() << endl;
+  cout << " Fertilizer           : " << fertnowstat() << " / " << fertmaxstat() << RESET << endl;
 }
 
 void Birch::display()
@@ -228,10 +230,10 @@ void Birch::display()
   cout << " Water Requirement    : High" << endl;
   cout << " Wildlife             : Bird Squiral Rodent" << endl;
   cout << "------------------------------------------------" << endl;
-  cout << " Tree Level           : "<< treelevelstat()<<endl;
-  cout << " [Requirement]"<<endl;
+  cout << GREEN << " Tree Level           : "<< treelevelstat()<<endl;
+  cout << YELLOW << " [Requirement]"<<endl;
   cout << " Water                : " << waternowstat() << " / " << watermaxstat() << endl;
-  cout << " Fertilizer           : " << fertnowstat() << " / " << fertmaxstat() << endl;
+  cout << " Fertilizer           : " << fertnowstat() << " / " << fertmaxstat() << RESET << endl;
 }
 
 void Maple::display()
@@ -247,10 +249,10 @@ void Maple::display()
   cout << " Wildlife             : Bird Squiral Rodent" << endl;
   cout<<  "Tree Level            : "<< treelevelstat()<<endl;
   cout << "------------------------------------------------" << endl;
-  cout << " Tree Level           : "<< treelevelstat()<<endl;
-  cout << " [Requirement]"<<endl;
+  cout << GREEN << " Tree Level           : "<< treelevelstat()<<endl;
+  cout << YELLOW << " [Requirement]"<<endl;
   cout << " Water                : " << waternowstat() << " / " << watermaxstat() << endl;
-  cout << " Fertilizer           : " << fertnowstat() << " / " << fertmaxstat() << endl;
+  cout << " Fertilizer           : " << fertnowstat() << " / " << fertmaxstat() << RESET << endl;
 }
 
 void Palm::display()
@@ -265,10 +267,10 @@ void Palm::display()
   cout << " Water Requirement    : High" << endl;
   cout << " Wildlife             : Bird Monkey Reptile" << endl;
   cout << "------------------------------------------------" << endl;
-  cout << " Tree Level           : "<< treelevelstat()<<endl;
-  cout << " [Requirement]"<<endl;
+  cout << GREEN << " Tree Level           : "<< treelevelstat()<<endl;
+  cout << YELLOW << " [Requirement]"<<endl;
   cout << " Water                : " << waternowstat() << " / " << watermaxstat() << endl;
-  cout << " Fertilizer           : " << fertnowstat() << " / " << fertmaxstat() << endl;
+  cout << " Fertilizer           : " << fertnowstat() << " / " << fertmaxstat() << RESET << endl;
 }
 
 void Olive::display()
@@ -283,9 +285,9 @@ void Olive::display()
   cout << " Water Requirement    : Medium" << endl;
   cout << " Wildlife             : Bird Insect Reptile" << endl;
   cout << "------------------------------------------------" << endl;
-  cout << " Tree Level           : "<< treelevelstat()<<endl;
-  cout << " [Requirement]"<<endl;
+  cout << GREEN << " Tree Level           : "<< treelevelstat()<<endl;
+  cout << YELLOW << " [Requirement]"<<endl;
   cout << " Water                : " << waternowstat() << " / " << watermaxstat() << endl;
-  cout << " Fertilizer           : " << fertnowstat() << " / " << fertmaxstat() << endl;
+  cout << " Fertilizer           : " << fertnowstat() << " / " << fertmaxstat() << RESET << endl;
 }
 #endif

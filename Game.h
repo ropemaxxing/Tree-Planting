@@ -9,12 +9,7 @@
 #include "Player.h"
 #include <limits>
 
-//ANSI COLOR
-#define RESET   "\033[0m"
-#define RED     "\033[31m"
-#define GREEN   "\033[32m"
-#define YELLOW  "\033[33m"
-#define BLUE    "\033[34m"
+#include "color.h"
 
 using namespace std;
 
@@ -62,8 +57,8 @@ void start(int lv)
     }
     A.add_node(t);
 
-    // water,fert,gold,BASEATK,mana
-    player *p = new player(0, 0, 1);
+    // water,fert,BASEATK,
+    player *p = new player(0, 0, 0);
     int i = 0;
     int glv;
     while (1)
@@ -264,16 +259,16 @@ void watering(player *p, NODE *t)
     int wateruse = t->watermaxstat() - t->waternowstat();
     // cout<<wateruse<<endl;
     if (p->wateramount() <= 0)
-        cout << "You don't have enough water!" << endl;
+        cout << RED << "You don't have enough water!" << RESET << endl;
     else if (p->wateramount() < wateruse)
     {
-        cout << "You watered the tree with " << p->wateramount() << " units of water." << endl;
+        cout << BLUE << "You watered the tree with " << p->wateramount() << " units of water." <<RESET << endl;
         t->addwater(p->wateramount());
         p->usewater(p->wateramount());
     }
     else if (p->wateramount() > wateruse)
     {
-        cout << "You watered the tree with " << wateruse << " units of water." << endl;
+        cout << BLUE << "You watered the tree with " << wateruse << " units of water." << RESET << endl;
         t->addwater(wateruse);
         p->usewater(wateruse);
     }
@@ -284,16 +279,16 @@ void puttingfert(player *p, NODE *t)
     int fertuse = t->fertmaxstat() - t->fertnowstat();
     // cout<<wateruse<<endl;
     if (p->fertamount() <= 0)
-        cout << "You don't have enough fertilizer!" << endl;
+        cout << RED << "You don't have enough fertilizer!" <<RESET << endl;
     else if (p->fertamount() < fertuse)
     {
-        cout << "You put " << p->fertamount() << " units of fertilizer on the tree." << endl;
+        cout << YELLOW << "You put " << p->fertamount() << " units of fertilizer on the tree." << RESET << endl;
         t->addfert(p->fertamount());
         p->usefert(p->fertamount());
     }
     else if (p->fertamount() > fertuse)
     {
-        cout << "You put " << fertuse << " units of fertilizer on the tree." << endl;
+        cout << YELLOW "You put " << fertuse << " units of fertilizer on the tree." << RESET << endl;
         t->addfert(fertuse);
         p->usefert(fertuse);
     }
