@@ -24,7 +24,7 @@ int rollDice()
 
 void Dice(int i, int x)
 {
-    system("CLS");
+    system("clear");
     cout << endl
          << "////////////////////////////////////" << endl;
     cout << "///        -----          -----  ///" << endl;
