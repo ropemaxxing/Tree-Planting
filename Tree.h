@@ -252,7 +252,12 @@ void treepruning(){
         }
 
         bool hasB = checkB(root);
-        if(!hasB)break;
+        if(!hasB){
+            printBT(root);
+            cout<<GREEN<<"You did a great job!"<<RESET<<endl;
+            this_thread::sleep_for(chrono::seconds(5));
+            break;
+        }
 
         printBT(root);
         //printNodeMembers(root);
