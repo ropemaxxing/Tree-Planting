@@ -59,3 +59,9 @@ int menu()
 }
 
 
+/*
+#include"visual.h"
+int main(){
+    waterdroplet();
+}*/
+

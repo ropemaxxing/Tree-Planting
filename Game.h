@@ -11,6 +11,7 @@
 #include <limits>
 
 #include "color.h"
+#include "visual.h"
 
 #include <chrono>
 #include <thread>
@@ -282,12 +283,14 @@ void watering(player *p, NODE *t)
         cout << RED << "You don't have enough water!" << RESET << endl;
     else if (p->wateramount() < wateruse)
     {
+        waterdroplet();
         cout << BLUE << "You watered the tree with " << p->wateramount() << " units of water." <<RESET << endl;
         t->addwater(p->wateramount());
         p->usewater(p->wateramount());
     }
     else if (p->wateramount() > wateruse)
     {
+        waterdroplet();
         cout << BLUE << "You watered the tree with " << wateruse << " units of water." << RESET << endl;
         t->addwater(wateruse);
         p->usewater(wateruse);
