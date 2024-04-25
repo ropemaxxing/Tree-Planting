@@ -7,9 +7,13 @@
 #include "LL.h"
 #include "WeedStat.h"
 #include "Player.h"
+#include "Tree.h"
 #include <limits>
 
 #include "color.h"
+
+#include <chrono>
+#include <thread>
 
 using namespace std;
 
@@ -58,16 +62,24 @@ void start(int lv)
     A.add_node(t);
 
     // water,fert,BASEATK,
-    player *p = new player(0, 0, 0);
+    player *p = new player(0, 0, 1);
     int i = 0;
     int glv;
+
+    int fight=0;
+    int prun=0;
     while (1)
     {
+        if(fight==1&&prun==1){
+            fight=0;
+            prun=0;
+        }
+
         cout << endl;
         cout << "Enter" << endl
              << "(1) Watering      (2) Put fertilizer" << endl
-             << "(3) Pest control  (4) Inventory" << endl
-             << "(5) Tree Info" << endl <<endl
+             << "(3) Pest control  (4) Pruning the branch" << endl
+             << "(5) Inventory     (6) Tree info" << endl <<endl
              << "(0) Exit"<<endl;
 
         cin >> i;
@@ -98,13 +110,21 @@ void start(int lv)
         }
         else if (i == 3)
         {
-            cutting(p);
+            if(fight==1)cout<<RED<<"pruning the branch first"<<RESET<<endl;
+            if(fight==0)cutting(p);
+            fight=1;
         }
         else if (i == 4)
         {
-            p->show();
+            if(prun==1)cout<<RED<<"pest control first"<<RESET<<endl;
+            if(prun==0)treepruning();
+            prun=1;
         }
         else if (i == 5)
+        {
+            p->show();
+        }
+        else if (i == 6)
         {
             treeinfo(t);
         }
