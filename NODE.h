@@ -33,11 +33,11 @@ NODE::NODE(int x)
 {
       data = x;
       next = NULL;
-      cout << "planting at " << x << endl;
+      cout << "Congratulations!!!, you just planted a tree." << endl;
 }
 NODE::~NODE()
 {
-      cout << "Node " << data << " is being deleted" << endl;
+      //cout << "Node " << data << " is being deleted" << endl;
 }
 NODE *NODE::move_next()
 {

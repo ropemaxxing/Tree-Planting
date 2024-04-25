@@ -67,8 +67,7 @@ tree::tree(int v, int w, int x, int y, int z, int data,int lv) : NODE(data)
 
 tree::~tree()
 {
-    cout << "How can you be this bad." << endl
-         << "You just cut tree without hesitation" << endl;
+    cout << "The tree you have planted, it's gone." << endl;
 }
 
 void tree::display()

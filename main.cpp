@@ -33,8 +33,8 @@ int main(int argc, char *argv[])
 
 int menu()
 {
+    system("clear");
     int i;
-    cout << endl;
     cout << "Hello and Welcome to TREE SIMULATOR" << endl;
     cout << "Enter" << endl
          << "(1) Planting         (2) Description" << endl;
