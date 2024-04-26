@@ -94,7 +94,7 @@ void fertfert() {
                 cout<<drop[i]<<RESET;
 
                 if (drop[i] == '\n') {
-                    this_thread::sleep_for(chrono::milliseconds(20));
+                    this_thread::sleep_for(chrono::milliseconds(30));
                 }
             }
             system("clear");
