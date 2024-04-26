@@ -12,7 +12,7 @@ using namespace std;
 
 struct TreeNode {
     int data;
-    char quality; 
+    char quality; //'g' 'b'
     TreeNode* left;
     TreeNode* right;
 };
@@ -88,7 +88,8 @@ void printBT(const string& prefix, const TreeNode* node, bool isLeft)
     if( node != nullptr )
     {
         cout << RED << prefix << RESET;
-        cout << RED << (isLeft ? "├──" : "└──" ) << RESET;  //left child(isLeft=ture) ไปขวา, right child(isLeft=false) ลงล่าง 
+        cout << RED << (isLeft ? "├──" : "└──" ) << RESET;  
+        //left child(isLeft=ture) ไปขวา, right child(isLeft=false) ลงล่าง 
         
         /*  unicode
             ├ : u+251C

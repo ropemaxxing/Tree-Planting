@@ -7,6 +7,7 @@ using namespace std;
 
 #include "Game.h"
 
+
 int menu();
 
 int main(int argc, char *argv[])
@@ -67,5 +68,19 @@ int main(){
     //backpack();
     //shears();
     treepruning();
+}
+*/
+/*
+int main() {
+    TreeNode *root = nullptr;
+    root = insertNode(root, 7, 'g');
+    root = insertNode(root, 4, 'b');
+    root = insertNode(root, 1, 'g');
+    root = insertNode(root, 5, 'g');
+    root = insertNode(root, 9, 'b');
+    root = insertNode(root, 10, 'g');
+    printBT(root);
+
+    return 0;
 }
 */
