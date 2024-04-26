@@ -69,6 +69,7 @@ void start(int lv)
 
     int fight=0;
     int prun=0;
+    int inven=0;
     while (1)
     {
         if(fight==1&&prun==1){
@@ -87,7 +88,7 @@ void start(int lv)
         system("clear");
 
 
-        if (cin.fail() || (i < 0 || i > 5))
+        if (cin.fail() || (i < 0 || i > 6) || cin.peek() != '\n')
         {   
             system("clear");
             cout << "Invalid input. Please enter 0-5" << endl;
@@ -97,6 +98,7 @@ void start(int lv)
         }
         if (i == 1)
         {
+            inven=0;
             watering(p, t);
             t->treelevelup();
             glv = t->getlevel();
@@ -104,6 +106,7 @@ void start(int lv)
         }
         else if (i == 2)
         {
+            inven=0;
             puttingfert(p, t);
             t->treelevelup();
             glv = t->getlevel();
@@ -111,22 +114,29 @@ void start(int lv)
         }
         else if (i == 3)
         {
+            inven=0;
             if(fight==1)cout<<RED<<"pruning the branch first"<<RESET<<endl;
             if(fight==0)cutting(p);
             fight=1;
         }
         else if (i == 4)
         {
+            inven=0;
             if(prun==1)cout<<RED<<"pest control first"<<RESET<<endl;
             if(prun==0)treepruning();
             prun=1;
         }
         else if (i == 5)
         {
+            if(inven==0){
+                backpack();
+            }
             p->show();
+            inven=1;
         }
         else if (i == 6)
         {
+            inven=0;
             treeinfo(t);
         }
         else if (i == 0)
@@ -305,12 +315,14 @@ void puttingfert(player *p, NODE *t)
         cout << RED << "You don't have enough fertilizer!" <<RESET << endl;
     else if (p->fertamount() < fertuse)
     {
+        fertfert();
         cout << YELLOW << "You put " << p->fertamount() << " units of fertilizer on the tree." << RESET << endl;
         t->addfert(p->fertamount());
         p->usefert(p->fertamount());
     }
     else if (p->fertamount() > fertuse)
     {
+        fertfert();
         cout << YELLOW "You put " << fertuse << " units of fertilizer on the tree." << RESET << endl;
         t->addfert(fertuse);
         p->usefert(fertuse);
@@ -333,7 +345,7 @@ int choose()
         cout << "(0) Done" << endl;
         cin >> i;
         system("clear");
-        if (cin.fail() || (i < 0 || i > 6))
+        if (cin.fail() || (i < 0 || i > 6) || cin.peek() != '\n')
         {   
             system("clear");
             cout << "Invalid input. Please enter 0-6" << endl;

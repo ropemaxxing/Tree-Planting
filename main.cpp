@@ -44,7 +44,7 @@ int menu()
         cout << "(3) End" << endl;
         cin >> i;
 
-        if (cin.fail() || (i < 1 || i > 3))
+        if (cin.fail() || (i < 1 || i > 3) || cin.peek() != '\n')
         {   
             system("clear");
             cout << "Invalid input. Please enter 1-3" << endl;
@@ -60,8 +60,12 @@ int menu()
 
 
 /*
-#include"visual.h"
+//test visual
 int main(){
-    waterdroplet();
-}*/
-
+    //waterdroplet();
+    //fertfert();
+    //backpack();
+    //shears();
+    treepruning();
+}
+*/

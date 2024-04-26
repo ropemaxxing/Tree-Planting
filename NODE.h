@@ -37,7 +37,7 @@ NODE::NODE(int x)
 }
 NODE::~NODE()
 {
-      cout << "Node " << data << " is being deleted" << endl;
+      //cout << "Node " << data << " is being deleted" << endl;
 }
 NODE *NODE::move_next()
 {

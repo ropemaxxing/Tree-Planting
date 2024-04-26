@@ -6,6 +6,8 @@
 /*this_thread::sleep_for(chrono::seconds(1));
 this_thread::sleep_for(chrono::milliseconds(100));*/
 
+#include "ShearVisual.h"
+
 using namespace std;
 
 struct TreeNode {
@@ -194,6 +196,7 @@ bool findNodeG(TreeNode* root, int data) {
     return NodeGLeft || NodeGRight;
 }
 
+
 bool checkB(TreeNode* root) {
     if (root == nullptr) {
         return false; 
@@ -212,6 +215,21 @@ bool checkB(TreeNode* root) {
         isFinished = true;
     }
     return isFinished; 
+}
+
+bool findNodeB(TreeNode* root, int data) {
+    if (root == nullptr) {
+        return false; 
+    }
+
+    if (root->data == data && root->quality == 'b') {
+        return true; 
+    }
+
+    bool NodeBLeft = findNodeB(root->left, data);
+    bool NodeBRight = findNodeB(root->right, data);
+
+    return NodeBLeft || NodeBRight;
 }
 
 void treepruning(){
@@ -241,13 +259,23 @@ void treepruning(){
         cout<<endl<< GREEN << "[Pruning the "<<PURPLE<< "bad branch"<< GREEN << " to make our tree grow healthier]"<<RESET<<endl;
         cout<<"Cut branch number : ";
         cin>>number;
-        cuttingbranch(root,number);
 
+        if (cin.fail() || cin.peek() != '\n')
+        {   
+            system("clear");
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        }
+        
         system("clear");
         bool cutG = checkG(root) && findNodeG(root,number);
+        bool cutB = checkB(root) && findNodeB(root,number);
+
         if (cutG) {
             cout <<RED<< "DONT CUT THE HEALTHY BRANCH!!!" <<RESET<< endl<<endl<<endl;
-        } else {
+        } 
+        else if (cutB) {
+            shears();
             cuttingbranch(root, number); 
         }
 
