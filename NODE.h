@@ -2,6 +2,7 @@
 #define NODE_H
 
 #include <iostream>
+#include "color.h"
 using namespace std;
 
 class NODE
@@ -33,7 +34,7 @@ NODE::NODE(int x)
 {
       data = x;
       next = NULL;
-      //cout << "planting at " << x << endl;
+      cout << GREEN << "Congratulation!!!, you just planted a tree. " <<RESET<<endl;
 }
 NODE::~NODE()
 {
