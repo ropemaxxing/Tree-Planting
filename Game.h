@@ -63,7 +63,7 @@ void start(int lv)
     A.add_node(t);
 
     // water,fert,BASEATK,
-    player *p = new player(0, 1000000, 1);
+    player *p = new player(0, 0, 1);
     int i = 0;
     int glv;
 
