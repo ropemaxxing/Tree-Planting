@@ -33,7 +33,7 @@ NODE::NODE(int x)
 {
       data = x;
       next = NULL;
-      cout << "planting at " << x << endl;
+      //cout << "planting at " << x << endl;
 }
 NODE::~NODE()
 {

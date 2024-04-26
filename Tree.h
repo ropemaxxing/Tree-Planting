@@ -261,6 +261,7 @@ void treepruning(){
         cout<<"Cut branch number : ";
         cin>>number;
 
+        
         if (cin.fail() || cin.peek() != '\n')
         {   
             system("clear");
@@ -269,8 +270,9 @@ void treepruning(){
         }
         
         system("clear");
-        bool cutG = checkG(root) && findNodeG(root,number);
-        bool cutB = checkB(root) && findNodeB(root,number);
+
+        bool cutG = findNodeG(root,number);
+        bool cutB = findNodeB(root,number);
 
         if (cutG) {
             cout <<RED<< "DONT CUT THE HEALTHY BRANCH!!!" <<RESET<< endl<<endl<<endl;
